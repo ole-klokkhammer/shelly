@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source ./venv/bin/activate
-
 device_name=$1
 
 echo "Compiling the ESPHome configuration"

@@ -1,12 +1,12 @@
 # set default substitutions if not defined in config
 substitutions:
-  friendly_name: "Entrance Roof"
-  device_name: entrance-roof
+  friendly_name: "Shelly Dimmer 2"
+  device_name: shelly-dim-2
   max_temp: "70" # °C
-  dim_lenght: "20s"
+  dim_lenght: "5s"
   restore_mode_light: "restore_default_off"
   restore_mode_switch: "restore_default_off"
-  min_brightness: "470"
+  min_brightness: "0"
   max_brightness: "1000"
   leading_edge: "false"
   gamma_correct: "0"
@@ -44,9 +44,9 @@ light:
     icon: ${light_icon}
     leading_edge: ${leading_edge}
     min_brightness: ${min_brightness}
-#    max_brightness: ${max_brightness}
+    max_brightness: ${max_brightness}
     restore_mode: ${restore_mode_light}
-    default_transition_length: 1s
+    default_transition_length: 0s
     gamma_correct: ${gamma_correct}
     power:
       id: ${light_power_id}
@@ -130,8 +130,6 @@ script:
       - logger.log: "Turn_on script started"
       - light.turn_on:
           id: dimmer
-#          brightness: !lambda |-
-#            return id(dimmer).remote_values.get_brightness();
 
   - id: script_turn_off
     mode: single
