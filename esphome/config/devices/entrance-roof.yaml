@@ -11,3 +11,10 @@ substitutions:
 
 packages:
   dimmer: !include ../packages/shelly_dimmer_2.yaml
+
+mqtt:
+  broker: 192.168.10.207
+  topic_prefix: shelly/${device_name}
+  log_topic: shelly/${device_name}/log
+  username: !secret mqtt_user
+  password: !secret mqtt_password
