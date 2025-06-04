@@ -1,6 +1,9 @@
 #!/bin/bash
 
+source venv/bin/activate && cd devices
+
 device_name=$1
+
 
 echo "Compiling the ESPHome configuration"
 esphome compile "$device_name".yaml

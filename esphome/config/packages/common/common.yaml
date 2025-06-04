@@ -2,6 +2,7 @@
 # Enable logging
 logger:
   baud_rate: 0
+  level: INFO
 
 time:
   - platform: homeassistant # Sync time with HA
