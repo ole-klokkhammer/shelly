@@ -1,0 +1,20 @@
+substitutions:
+  friendly_name: "Kitchen Roof"
+  device_name: kitchen-roof
+  max_temp: "70" # °C
+  dim_lenght: "3s"
+  min_brightness: "470"
+  max_brightness: "1000"
+  leading_edge: "false"
+  gamma_correct: "0"
+  light_icon: mdi:coach-lamp
+
+packages:
+  dimmer: !include ../packages/shelly_dimmer_2.yaml
+
+mqtt:
+  broker: 192.168.10.207
+  topic_prefix: shelly/${device_name}
+  log_topic: shelly/${device_name}/log
+  username: !secret mqtt_user
+  password: !secret mqtt_password
